@@ -18,7 +18,7 @@ export default function Home() {
           and often some blog content about technologies or random stuffs 😎
         </p>
 
-        <div className={styles.grid}>
+        <div className={styles.grid+" "+styles.max}>
           <a href="/portfolio" className={styles.card}>
             <h2>Portfolio &rarr;</h2>
             <p>See all my jobs in past, present and future (?).</p>
