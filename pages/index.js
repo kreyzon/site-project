@@ -1,4 +1,4 @@
-import FullPage from '../components/FullPage'
+import FullPage from '../components/layouts/FullPage'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {

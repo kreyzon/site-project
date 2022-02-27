@@ -1,11 +1,15 @@
-import FullPage from '../components/FullPage'
+import FullPage from '../components/layouts/FullPage'
+import TextLimited from '../components/elements/TextLimited'
 import styles from '../styles/Home.module.css'
+import getConfig from 'next/config';
 
-const Item = ({ post }) => (
-  <a href={post.Url} className={styles.card}>
+const { publicRuntimeConfig = {} } = getConfig ? getConfig() : {};
+
+const Item = ({ post, key }) => (
+  <div className={styles.card} key={key}>
     <h2>{post.Title}</h2>
-    <p>{post.Summary}</p>
-  </a>
+    <TextLimited text={post.Summary}/>
+  </div>
 )
 function Portfolio({ posts=[] }) {
   const meta = {
@@ -25,7 +29,7 @@ function Portfolio({ posts=[] }) {
         </p>
 
         <div className={styles.grid}>
-          {posts.map((post) => Item({ post }))}
+          {posts.map((post, index) => Item({ post, key: index }))}
         </div>
       </>
     </FullPage>
@@ -35,7 +39,7 @@ function Portfolio({ posts=[] }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch('http://localhost:8080/v1/portfolio')
+  const res = await fetch(`${publicRuntimeConfig.API_URL}/v1/portfolio`)
   const posts = await res.json()
 
   // By returning { props: { posts } }, the Blog component
