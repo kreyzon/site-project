@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import navStyles from '../styles/navbar.module.css'
+import styles from '../../styles/Home.module.css'
+import navStyles from '../../styles/navbar.module.css'
 
 export default function FullPage({ children, pageProps, hasHeader=false }) {
   return (
