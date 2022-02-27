@@ -1,8 +1,19 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import navStyles from '../../styles/navbar.module.css'
 
 export default function FullPage({ children, pageProps, hasHeader=false }) {
+  const [displayChildren, setDisplayChildren] = useState(children);
+  const [transitionStage, setTransitionStage] = useState("fadeOut");
+  useEffect(() => {
+    setTransitionStage("fadeIn");
+  }, []);
+
+  useEffect(() => {
+    if (children !== displayChildren) setTransitionStage("fadeOut");
+  }, [children, setDisplayChildren, displayChildren]);
+
   return (
   <>
     {hasHeader &&
@@ -22,7 +33,9 @@ export default function FullPage({ children, pageProps, hasHeader=false }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main
+        className={`${styles.main} ${styles[transitionStage]}`}
+      >
         {children}
       </main>
 
