@@ -31,6 +31,9 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
 const nextConfig = {
   reactStrictMode: true,
   publicRuntimeConfig: envKeys,
+  images: {
+    loader: "custom",
+  },
 }
 
 module.exports = nextConfig
