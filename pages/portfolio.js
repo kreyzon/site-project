@@ -57,7 +57,7 @@ function Portfolio({ posts=[] }) {
 
       <p className={styles.description}>
         Some jobs maybe was no employer link because <br></br>
-        are door closed or was not a website (don't ask me why)
+        are door closed or was not a website (do not ask me why)
       </p>
 
       <div className={styles.grid}>

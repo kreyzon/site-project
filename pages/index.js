@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import FullPage from '../components/layouts/FullPage'
 import styles from '../styles/Home.module.css'
 
@@ -19,23 +20,24 @@ export default function Home() {
         </p>
 
         <div className={styles.grid+" "+styles.max}>
-          <a href="/portfolio" className={styles.card}>
-            <h2>Portfolio &rarr;</h2>
-            <p>See all my jobs in past, present and future (?).</p>
-          </a>
-
-          <a href="/blog" className={styles.card}>
-            <h2>Blog &rarr;</h2>
-            <p>All my thoughts and studies are here!</p>
-          </a>
-
-          <a
-            href="/contact"
-            className={styles.card}
-          >
-            <h2>About Me &rarr;</h2>
-            <p>Some personal information and contacts in case your want talk with me</p>
-          </a>
+          <Link href="/portfolio">
+            <a className={styles.card}>
+              <h2>Portfolio &rarr;</h2>
+              <p>See all my jobs in past, present and future (?).</p>
+            </a>
+          </Link>
+          <Link href="/blog" >
+            <a className={styles.card}>
+              <h2>Blog &rarr;</h2>
+              <p>All my thoughts and studies are here!</p>
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a className={styles.card}>
+              <h2>About Me &rarr;</h2>
+              <p>Some personal information and contacts in case your want talk with me</p>
+            </a>
+          </Link>
 
           <a
             href="https://github.com/kreyzon"

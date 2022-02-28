@@ -32,18 +32,18 @@ export default function Contact() {
       </h1>
       <p className={styles.description}>
         <span>There many ways to communicate with me, some more frequently than others.</span>
-        <h4>Email's:</h4>
+        <h4>Emails:</h4>
         <ul className={styles.ul_justifed}>
-          <li><a href='mail_to:cleissonvb@gmail.com'>cleissonvb@gmail.com</a> > it is my main email, also can call me on Hangouts</li>
-          <li><a href='mail_to:ryusei-kenragna@hotmail.com'>ryusei-kenragna@hotmail.com</a> > this is my account from the late MSN, but still working and is accessed to check some offers and promotions.</li>
-          <li><a href='mail_to:kreyzon@outlook.com'>kreyzon@outlook.com</a> > a new Outlook email for migrate some contacts on email above</li>
+          <li><a href='mail_to:cleissonvb@gmail.com'>cleissonvb@gmail.com</a> &gt; it is my main email, also can call me on Hangouts</li>
+          <li><a href='mail_to:ryusei-kenragna@hotmail.com'>ryusei-kenragna@hotmail.com</a> &gt; this is my account from the late MSN, but still working and is accessed to check some offers and promotions.</li>
+          <li><a href='mail_to:kreyzon@outlook.com'>kreyzon@outlook.com</a> &gt; a new Outlook email for migrate some contacts on email above</li>
         </ul>
         <h4>Social Medias:</h4>
         <ul className={styles.ul_justifed}>
-          <li><a href='http://www.facebook.com/cleissonvb'>Facebook</a> > for personal contact and if you want to be my friend</li>
-          <li><a href='http://www.twitter.com/kreyzon'>Twitter</a> > @kreyzon for mentions</li>
-          <li><a href='https://www.linkedin.com/in/cleisson-vieira-054a9268'>LinkedIn</a> > for professional profile</li>
-          <li><a href='https://www.researchgate.net/profile/Cleisson_Barbosa'>ResearchGate</a> > for researcher profile</li>
+          <li><a href='http://www.facebook.com/cleissonvb'>Facebook</a> &gt; for personal contact and if you want to be my friend</li>
+          <li><a href='http://www.twitter.com/kreyzon'>Twitter</a> &gt; @kreyzon for mentions</li>
+          <li><a href='https://www.linkedin.com/in/cleisson-vieira-054a9268'>LinkedIn</a> &gt; for professional profile</li>
+          <li><a href='https://www.researchgate.net/profile/Cleisson_Barbosa'>ResearchGate</a> &gt; for researcher profile</li>
         </ul>
       </p>
     </FullPage>
