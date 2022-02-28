@@ -26,6 +26,7 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
   prev[next] = value;
   return prev;
 }, {});
+const isProd = NODE_ENV === 'production'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -34,6 +35,7 @@ const nextConfig = {
   images: {
     loader: "custom",
   },
+  assetPrefix: isProd ? '/site-dashboard/' : ''
 }
 
 module.exports = nextConfig
