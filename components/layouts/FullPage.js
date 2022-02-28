@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import navStyles from '../../styles/navbar.module.css'
+import Modal from '../elements/Modal';
+import ModalContext from '../context/ModalContext'
 
-export default function FullPage({ children, pageProps, hasHeader=false }) {
+export default function FullPage({ children, pageProps, hasHeader=false, hasModal=false, propsModal={} }) {
   const [displayChildren, setDisplayChildren] = useState(children);
   const [transitionStage, setTransitionStage] = useState("fadeOut");
   useEffect(() => {
@@ -11,7 +13,7 @@ export default function FullPage({ children, pageProps, hasHeader=false }) {
   }, []);
 
   useEffect(() => {
-    if (children !== displayChildren) setTransitionStage("fadeOut");
+    if (children !== displayChildren && !hasModal) setTransitionStage("fadeOut");
   }, [children, setDisplayChildren, displayChildren]);
 
   return (
@@ -33,12 +35,17 @@ export default function FullPage({ children, pageProps, hasHeader=false }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main
-        className={`${styles.main} ${styles[transitionStage]}`}
-      >
-        {children}
-      </main>
+      <ModalContext.Provider value={{...propsModal}}>
+        <main
+          className={`${styles.main} ${styles[transitionStage]}`}
+        >
+          {children}
+        </main>
 
+        {hasModal && (
+          <Modal />
+        )}
+      </ModalContext.Provider>
       <footer className={styles.footer}>
         <a
           href="https://github.com/kreyzon"
