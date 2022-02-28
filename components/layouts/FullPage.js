@@ -24,7 +24,7 @@ export default function FullPage({ children, pageProps, hasHeader=false, hasModa
           <li><a href="/">Home</a></li>
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog">Blog</a></li>
-          <li><a href="/contacts">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     }

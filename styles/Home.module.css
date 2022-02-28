@@ -202,3 +202,34 @@
 .modal_footer a:active {
   text-decoration: underline;
 }
+
+.description_indent {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  text-align: left;
+  text-indent: 4em;
+}
+.description_indent a{
+  color: #5c6bc0;
+  border-color: #5c6bc0;
+}
+.description_indent a:hover,
+.description_indent a:focus,
+.description_indent a:active {
+  text-decoration: underline;
+}
+.ul_justifed {
+  text-align: justify;
+  list-style-type: none;
+}
+
+.ul_justifed li a{
+  color: #5c6bc0;
+  border-color: #5c6bc0;
+}
+.ul_justifed li a:hover,
+.ul_justifed li a:focus,
+.ul_justifed li a:active {
+  text-decoration: underline;
+}
