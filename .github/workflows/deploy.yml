@@ -7,6 +7,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  API_URL: https://site-dashboard-api.herokuapp.com
+
 jobs:
   deployment:
     runs-on: ubuntu-latest

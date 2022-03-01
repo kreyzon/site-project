@@ -70,20 +70,8 @@ function Portfolio({ posts=[] }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  // const res = await fetch(`${publicRuntimeConfig.API_URL}/v1/portfolio`)
-  // const posts = await res.json()
-  const posts = [
-    {
-      Title: "Teste Um",
-      Summary: "Consequat ut enim labore commodo enim incididunt irure adipisicing aute incididunt aliqua. Consequat aliqua cillum eiusmod et non est laborum aliquip culpa ex eiusmod. Consectetur sit dolor deserunt id. Enim est qui aliqua voluptate voluptate nostrud sunt cillum incididunt anim incididunt. Elit reprehenderit qui adipisicing quis deserunt.",
-      Url: "https://www.google.com/"
-    },
-    {
-      Title: "Teste Dois",
-      Summary: "Velit nostrud commodo est deserunt ullamco sunt enim nulla ea dolor sit. Velit aute irure mollit id dolor mollit dolore id duis nisi aliquip laborum qui quis. Quis irure laboris deserunt quis tempor dolore velit voluptate cupidatat enim ut voluptate in. Proident irure veniam anim minim magna culpa sunt pariatur consectetur nulla. Laboris esse enim ipsum nostrud amet adipisicing non deserunt aute in. Commodo non dolore ad aute anim laboris commodo. Ullamco enim voluptate pariatur sint ad.",
-      Url: "https://www.bing.com/"
-    },
-  ]
+  const res = await fetch(`${publicRuntimeConfig.API_URL}/v1/portfolio`)
+  const posts = await res.json()
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
