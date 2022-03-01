@@ -27,9 +27,19 @@ jobs:
         run: |
           npm i
           npm run deploy
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./out
+          source-directory: './out'
+          destination-github-username: 'kreyzon'
+          destination-repository-name: 'kreyzon.github.io'
+          user-email: cleissonvb@gmail.com
+          target-branch: master
+
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      #     publish_dir: ./out
