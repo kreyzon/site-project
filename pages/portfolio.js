@@ -34,7 +34,7 @@ function Portfolio({ posts=[] }) {
   useEffect(() => {
     if (!sessionStorage.popupModal) {
       const timer = setTimeout(() => {
-        setIsShown(true);
+        setIsShown(false);
         sessionStorage.popupModal = 1;
       }, 2000);
 
